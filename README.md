@@ -203,6 +203,9 @@ License, version 3 or (at your option) any later version. See [LICENSE](LICENSE)
 The libraries WestPlay ships keep their own licences: see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md), and
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the work it follows.
 
+Safari's browser core comes from [Helow19274/WestPlay](https://github.com/Helow19274/WestPlay) (GPL-3.0). TV plays
+HLS streams with [hls.js](https://github.com/video-dev/hls.js) (Apache-2.0).
+
 <sub>WestPlay is an independent project, not affiliated with or endorsed by Apple, SCS Software, Spotify, Google or
 the truck makers. CarPlay, Apple Music, Spotify, YouTube, YouTube Music and the truck makers' names and logos are
 trademarks of their owners, used to name what WestPlay works with. The screenshots show WestPlay's preview with
