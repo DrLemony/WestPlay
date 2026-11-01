@@ -9,6 +9,7 @@ import {
   customFile,
   FILES_BASE,
   onAdding,
+  pickTvVideos,
   removeIconSet,
   removeWallpaper,
 } from '../customize'
@@ -56,6 +57,11 @@ export function Customize({ cw, settings, custom, refreshCustom }: PageProps) {
   useEffect(() => onAdding(() => setAdding(true)), [])
   useScreenAt('home', GLOW.home, null)
   const look = settings.settings?.look
+  const videos = settings.settings?.tv?.videos ?? null
+  const setVideos = (folder: string | null) => {
+    const current = settings.settings
+    if (current) void settings.update({ ...current, tv: { ...current.tv, videos: folder } })
+  }
   const choose = (change: Partial<Settings['look']>) => {
     const current = settings.settings
     if (current) void settings.update({ ...current, look: { ...current.look, ...change } })
@@ -187,6 +193,18 @@ export function Customize({ cw, settings, custom, refreshCustom }: PageProps) {
       <p className="cz-note ob-in">
         {w.iconsNote.replace('{names}', names)} {w.looksNote}
       </p>
+      <Group title={w.tvTitle} place={6}>
+        <Row
+          title={w.tvFolder}
+          value={videos ?? cw.values.none}
+          link
+          onClick={() => {
+            void pickTvVideos(w.tvPick).then((folder) => folder !== null && setVideos(folder))
+          }}
+        />
+        {videos && <Row title={w.remove} danger onClick={() => setVideos(null)} />}
+      </Group>
+      <p className="cz-note ob-in">{w.tvNote}</p>
     </Panel>
   )
 }

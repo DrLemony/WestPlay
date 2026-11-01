@@ -267,6 +267,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Izberi ozadja',
     pickWallpaperFolder: 'Izberi mapo z ozadji',
     pickFolder: 'Izberi mapo nabora ikon',
+    tvTitle: 'TV',
+    tvFolder: 'Mapa z videi',
+    tvPick: 'Izberite mapo s svojimi videi',
+    tvNote:
+      'Videi v tej mapi in njenih podmapah (MP4, WebM, MOV) se predvajajo v aplikaciji TV, v profilu Videi z računalnika.',
     pickZip: 'Izberi .zip nabora ikon',
     images: 'Slike',
     zips: 'Arhivi zip',

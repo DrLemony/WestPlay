@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Выберите обои',
     pickWallpaperFolder: 'Выберите папку с обоями',
     pickFolder: 'Выберите папку набора значков',
+    tvTitle: 'ТВ',
+    tvFolder: 'Папка с видео',
+    tvPick: 'Выберите папку с вашими видео',
+    tvNote:
+      'Видео из этой папки и её подпапок (MP4, WebM, MOV) воспроизводятся в приложении ТВ, в профиле «Видео с ПК».',
     pickZip: 'Выберите .zip набора значков',
     images: 'Изображения',
     zips: 'Архивы zip',

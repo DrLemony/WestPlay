@@ -448,19 +448,39 @@ export interface Strings {
   }
   /** TV: the player's M3U playlists, their channels and the channel playing. */
   tv: {
-    playlists: string
-    addPlaylist: string
-    playlistHint: string
-    add: string
+    /** The profiles, as Netflix's: its title, the card adding one, and managing (removing) them. */
+    sources: string
+    addProfile: string
+    manageProfiles: string
+    done: string
+    /** Adding a profile: what it plays, each kind's name and what it is. */
+    chooseKind: string
+    kinds: Record<'m3u' | 'xtream' | 'videos', string>
+    kindAbout: Record<'m3u' | 'xtream' | 'videos', string>
+    /** The form's fields and buttons. */
+    name: string
+    link: string
+    linkHint: string
+    server: string
+    serverHint: string
+    username: string
+    password: string
+    save: string
+    paste: string
+    cancel: string
+    back: string
     remove: string
-    /** The free list offered while there's none. */
+    /** A free list of channels (iptv-org), offered in M3U's form. */
     suggested: string
-    nowPlaying: string
     search: string
     all: string
     loading: string
     noChannels: string
     playlistFailed: string
+    xtreamFailed: string
+    /** PC videos with no folder chosen: where to choose it. */
+    noVideoFolder: string
+    noVideos: string
     streamFailed: string
     /** A channel with no name of its own. */
     live: string
@@ -964,19 +984,39 @@ export const STRINGS: Record<Language, Strings> = {
       outsideHost: 'Websites open in the WestPlay app.',
     },
     tv: {
-      playlists: 'Playlists',
-      addPlaylist: 'Add playlist',
-      playlistHint: 'M3U or M3U8 link',
-      add: 'Add',
+      sources: 'Sources',
+      addProfile: 'Add Profile',
+      manageProfiles: 'Manage Profiles',
+      done: 'Done',
+      chooseKind: 'What does it play?',
+      kinds: { m3u: 'M3U Playlist', xtream: 'Xtream', videos: 'PC Videos' },
+      kindAbout: {
+        m3u: 'A link to an M3U or M3U8 list of channels',
+        xtream: 'Your provider’s server, username and password',
+        videos: 'The videos in the folder chosen in WestPlay on your PC',
+      },
+      name: 'Profile name',
+      link: 'Link',
+      linkHint: 'https://…/list.m3u',
+      server: 'Server',
+      serverHint: 'http://server:8080',
+      username: 'Username',
+      password: 'Password',
+      save: 'Save',
+      paste: 'Paste',
+      cancel: 'Cancel',
+      back: 'Back',
       remove: 'Remove',
       suggested: 'Free channels (iptv-org)',
-      nowPlaying: 'Now Playing',
-      search: 'Search channels',
+      search: 'Search',
       all: 'All',
       loading: 'Loading…',
-      noChannels: 'No channels',
+      noChannels: 'Nothing here',
       playlistFailed: 'The playlist couldn’t be loaded.',
-      streamFailed: 'This channel couldn’t be played.',
+      xtreamFailed: 'The server didn’t sign in. Check its address, username and password.',
+      noVideoFolder: 'Choose a videos folder in WestPlay on your PC: Customize › TV.',
+      noVideos: 'No videos in the folder.',
+      streamFailed: 'This couldn’t be played.',
       live: 'Live',
       play: 'Play',
       pause: 'Pause',
@@ -1486,19 +1526,39 @@ export const STRINGS: Record<Language, Strings> = {
       outsideHost: 'Web siteleri WestPlay uygulamasında açılır.',
     },
     tv: {
-      playlists: 'Listeler',
-      addPlaylist: 'Liste ekle',
-      playlistHint: 'M3U veya M3U8 linki',
-      add: 'Ekle',
+      sources: 'Kaynaklar',
+      addProfile: 'Profil Ekle',
+      manageProfiles: 'Profilleri Yönet',
+      done: 'Bitti',
+      chooseKind: 'Ne oynatacak?',
+      kinds: { m3u: 'M3U Listesi', xtream: 'Xtream', videos: 'PC Videoları' },
+      kindAbout: {
+        m3u: 'Kanalların M3U veya M3U8 listesinin linki',
+        xtream: 'Sağlayıcının sunucusu, kullanıcı adı ve şifresi',
+        videos: 'PC’deki WestPlay’de seçilen klasördeki videolar',
+      },
+      name: 'Profil adı',
+      link: 'Link',
+      linkHint: 'https://…/liste.m3u',
+      server: 'Sunucu',
+      serverHint: 'http://sunucu:8080',
+      username: 'Kullanıcı adı',
+      password: 'Şifre',
+      save: 'Kaydet',
+      paste: 'Yapıştır',
+      cancel: 'Vazgeç',
+      back: 'Geri',
       remove: 'Sil',
       suggested: 'Ücretsiz kanallar (iptv-org)',
-      nowPlaying: 'Şu an oynuyor',
-      search: 'Kanal ara',
+      search: 'Ara',
       all: 'Tümü',
       loading: 'Yükleniyor…',
-      noChannels: 'Kanal yok',
+      noChannels: 'Burada bir şey yok',
       playlistFailed: 'Liste yüklenemedi.',
-      streamFailed: 'Bu kanal oynatılamadı.',
+      xtreamFailed: 'Sunucuya giriş yapılamadı. Adresi, kullanıcı adını ve şifreyi kontrol et.',
+      noVideoFolder: 'PC’deki WestPlay’de bir video klasörü seç: Özelleştir › TV.',
+      noVideos: 'Klasörde video yok.',
+      streamFailed: 'Bu oynatılamadı.',
       live: 'Canlı',
       play: 'Oynat',
       pause: 'Duraklat',

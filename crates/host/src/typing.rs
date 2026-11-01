@@ -63,7 +63,7 @@ pub fn state_message(state: TypingState) -> String {
 
 /// Pasted text as one line: line breaks and tabs as spaces, at most [`PASTE_MOST`] characters, no other
 /// control characters.
-fn one_line(text: &str) -> String {
+pub fn one_line(text: &str) -> String {
     let line: String = text
         .chars()
         .map(|c| if c == '\r' || c == '\n' || c == '\t' { ' ' } else { c })

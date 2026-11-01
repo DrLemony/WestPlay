@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: '壁紙を選択',
     pickWallpaperFolder: '壁紙のフォルダを選択',
     pickFolder: 'アイコンセットのフォルダを選択',
+    tvTitle: 'TV',
+    tvFolder: 'ビデオフォルダ',
+    tvPick: 'ビデオのフォルダを選択',
+    tvNote:
+      'このフォルダとその中のフォルダのビデオ（MP4、WebM、MOV）は、TVアプリのPCビデオのプロフィールで再生されます。',
     pickZip: 'アイコンセットの .zip を選択',
     images: '画像',
     zips: 'Zip アーカイブ',

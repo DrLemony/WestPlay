@@ -195,6 +195,7 @@ fn main() {
             customize::add_icon_set,
             customize::remove_wallpaper,
             customize::remove_icon_set,
+            customize::pick_tv_videos,
             update::update_offer,
             update::look_for_update,
             update::install_update,

@@ -65,6 +65,7 @@ let settings: Settings = {
   screen: { truckStrip: 'auto' },
   look: { wallpaper: null, iconSet: null, iconStyle: 'auto' },
   graphics: { gpu: null },
+  tv: { videos: null },
 }
 
 // The player's own, made up from WestPlay's files (the preview's address: `FILES_BASE` is `/` here).

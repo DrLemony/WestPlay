@@ -267,6 +267,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Pasirink fonus',
     pickWallpaperFolder: 'Pasirink fonų aplanką',
     pickFolder: 'Pasirink piktogramų rinkinio aplanką',
+    tvTitle: 'TV',
+    tvFolder: 'Vaizdo įrašų aplankas',
+    tvPick: 'Pasirinkite savo vaizdo įrašų aplanką',
+    tvNote:
+      'Šio aplanko ir jo poaplankių vaizdo įrašai (MP4, WebM, MOV) leidžiami programėlėje TV, profilyje Kompiuterio vaizdo įrašai.',
     pickZip: 'Pasirink piktogramų rinkinio .zip',
     images: 'Paveikslėliai',
     zips: 'Zip archyvai',

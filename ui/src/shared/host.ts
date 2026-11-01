@@ -100,6 +100,12 @@ export type HostMessage =
       error: string | null
     }
   | { type: 'browserFocus'; editable: boolean }
+  /** TV's player (westplay_host::tv_view): how it plays, a fetch's answer (by the `fetch` command's id), and
+   * the PC videos (`folder`: one is chosen, in the companion). */
+  | { type: 'tvState'; playing: boolean; loading: boolean; failed: boolean }
+  | { type: 'tvFetched'; id: number; ok: boolean; text?: string }
+  | { type: 'tvVideos'; folder: boolean; videos: { name: string; url: string }[] }
+  | { type: 'tvPasted'; text: string }
   | { type: 'telemetry'; data: Telemetry }
   | { type: 'truck'; data: TruckInfo }
   | { type: 'job'; data: JobInfo }
@@ -276,6 +282,7 @@ export function toEqualizer(value: unknown): Equalizer {
 
 export type PageMessage =
   | { type: 'browser'; command: BrowserCommand }
+  | { type: 'tv'; command: TvCommand }
   | { type: 'ready' }
   /** A startup stage reached (the boot screens shown), for the host's startup log. */
   | { type: 'startup'; stage: string }
@@ -325,6 +332,15 @@ export type BrowserCommand =
   | { action: 'show'; x: number; y: number; width: number; height: number }
   | { action: 'zoom'; factor: number }
   | { action: 'input'; event: TypedEvent }
+
+/** What the TV app asks of its player (`westplay_host::tv_view::Command`): where it shows, what it plays,
+ * a playlist or Xtream's answer fetched (answered with `tvFetched`), the PC videos (`tvVideos`) and the PC clipboard's text (`tvPasted`). */
+export type TvCommand =
+  | { action: 'show'; x: number; y: number; width: number; height: number }
+  | { action: 'hide' | 'close' | 'pause' | 'resume' | 'stop' | 'videos' | 'paste' }
+  | { action: 'play'; url: string }
+  | { action: 'volume'; share: number }
+  | { action: 'fetch'; id: number; url: string }
 
 export type SpotifyCommand =
   /** Run (hidden), saying whether it's signed in (the Spotify app opened). */

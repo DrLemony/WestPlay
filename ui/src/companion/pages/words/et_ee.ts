@@ -266,6 +266,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Vali taustapildid',
     pickWallpaperFolder: 'Vali taustapiltide kaust',
     pickFolder: 'Vali ikoonikomplekti kaust',
+    tvTitle: 'TV',
+    tvFolder: 'Videokaust',
+    tvPick: 'Vali oma videote kaust',
+    tvNote:
+      'Selle kausta ja selle alamkaustade videod (MP4, WebM, MOV) mängivad TV-rakenduses, arvuti videote profiilis.',
     pickZip: 'Vali ikoonikomplekti .zip',
     images: 'Pildid',
     zips: 'Zip-arhiivid',

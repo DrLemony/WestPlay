@@ -3,28 +3,7 @@
   flex-direction: column;
   gap: 10px;
   min-width: 0;
-  font-size: 20px;
-}
-.tv-bar,
-.tv-add,
-.tv-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-}
-.tv-bar h1 {
-  flex: 1;
-  margin: 0;
-  font-size: 28px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.tv-bar .text-field,
-.tv-add .text-field {
-  flex: 1;
-  min-width: 0;
+  font-size: 26px;
 }
 .tv-app button {
   border: 0;
@@ -39,16 +18,174 @@
 .tv-app button:active {
   opacity: 0.65;
 }
-.tv-pill,
-.tv-chip {
+
+/* Profiles, as Netflix's: the question, the cards in a row (the + card last), and Manage Profiles. */
+.tv-profiles {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  min-height: 0;
+}
+.tv-profiles h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 600;
+}
+.tv-cards {
+  display: flex;
+  gap: 24px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 4px;
+}
+.tv-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 150px;
+  flex-shrink: 0;
+  background: none;
+}
+.tv-avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 14px;
+  color: white;
+}
+.tv-avatar-glyph {
+  font-size: 56px;
+  line-height: 1;
+}
+.tv-avatar-add {
+  background: color-mix(in srgb, var(--text) 12%, transparent);
+  color: var(--text);
+  font-size: 80px;
+  font-weight: 200;
+}
+.tv-avatar-remove {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  background: rgb(0 0 0 / 55%);
+  font-size: 64px;
+}
+.tv-card-name {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tv-card-kind {
+  margin-top: -6px;
+  font-size: 20px;
+  opacity: 0.6;
+}
+.tv-app .tv-manage {
+  border: 1px solid color-mix(in srgb, var(--text) 45%, transparent) !important;
+  background: none;
+  padding: 8px 24px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 21px !important;
+  opacity: 0.8;
+}
+
+/* Adding one: its kinds, then its form. */
+.tv-kinds {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 12px;
+}
+.tv-app .tv-kind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 16px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--text) 12%, transparent);
+  text-align: center;
+}
+.tv-kind .tv-avatar-glyph {
+  font-size: 44px;
+}
+.tv-kind span:last-child {
+  font-size: 21px;
+  opacity: 0.65;
+}
+.tv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+}
+.tv-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tv-field > span {
+  width: 190px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+.tv-field .text-field {
+  flex: 1;
+  min-width: 0;
+}
+.tv-suggest {
+  align-self: flex-start;
+  background: none;
+  color: #0a84ff !important;
+  padding: 4px 0;
+  margin-left: 202px;
+}
+
+/* A profile's channels, and the player. */
+.tv-bar,
+.tv-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.tv-bar h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 36px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tv-bar .text-field {
+  width: 260px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+.tv-app .tv-pill,
+.tv-app .tv-chip {
   border-radius: 999px;
   padding: 8px 16px;
   min-height: 42px;
-  background: var(--app-background);
+  background: color-mix(in srgb, var(--text) 12%, transparent);
 }
-.tv-chip.chosen {
-  background: #0a84ff;
-  color: white;
+.tv-app .tv-primary {
+  background: #e50914;
+  color: white !important;
+}
+.tv-app .tv-chip.chosen {
+  background: #e50914;
+  color: white !important;
 }
 .tv-back {
   background: none;
@@ -90,54 +227,28 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.tv-row small {
-  opacity: 0.6;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 .tv-row img,
 .tv-logo {
-  width: 48px;
-  height: 32px;
+  width: 60px;
+  height: 40px;
   object-fit: contain;
   flex-shrink: 0;
 }
-.tv-remove {
-  background: none;
-  font-size: 26px !important;
-  padding: 0 12px;
-  opacity: 0.6;
-}
 .tv-screen {
-  position: relative;
   flex: 1;
   min-height: 0;
   background: black;
   border-radius: 12px;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-}
-.tv-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.tv-screen .tv-note {
-  position: relative;
-  z-index: 1;
-  color: white;
 }
 .tv-note {
   opacity: 0.7;
   text-align: center;
 }
+.tv-status {
+  flex: 1;
+  opacity: 0.7;
+}
 .tv-volume {
   min-width: 56px;
   text-align: center;
-}
-.tv-controls {
-  justify-content: center;
 }

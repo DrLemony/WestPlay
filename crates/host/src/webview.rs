@@ -215,6 +215,18 @@ impl OffscreenWebView {
 
     /// A WebView of `width` x `height` on `stage`'s compositor (not on the frame until [`Stage::add`]).
     pub fn new(stage: &Stage, width: u32, height: u32, user_data: &Path) -> Result<Self, Error> {
+        Self::with_arguments(stage, width, height, user_data, "")
+    }
+
+    /// [`new`](Self::new), its browser started with `arguments` too. The browser is the profile's (`user_data`):
+    /// a profile shared with another WebView takes the first one's arguments.
+    pub fn with_arguments(
+        stage: &Stage,
+        width: u32,
+        height: u32,
+        user_data: &Path,
+        arguments: &str,
+    ) -> Result<Self, Error> {
         let root = stage.compositor.CreateContainerVisual()?;
         root.SetSize(Vector2 { X: width as f32, Y: height as f32 })?;
 
@@ -249,7 +261,7 @@ impl OffscreenWebView {
             let _ = EnableWindow(host, false);
         }
 
-        let environment = create_environment(user_data)?;
+        let environment = create_environment(user_data, arguments)?;
         // SAFETY: WebView2 writes a CoTaskMem string into `version`, read before it's dropped.
         let version = unsafe {
             let mut version = PWSTR::null();
@@ -728,7 +740,7 @@ fn process_failure(kind: COREWEBVIEW2_PROCESS_FAILED_KIND) -> String {
     name.to_owned()
 }
 
-fn create_environment(user_data: &Path) -> Result<ICoreWebView2Environment, Error> {
+fn create_environment(user_data: &Path, extra: &str) -> Result<ICoreWebView2Environment, Error> {
     let options = CoreWebView2EnvironmentOptions::default();
     // Chromium throttles or stops rendering for hidden or occluded windows; ours is never shown.
     let mut arguments = "--disable-features=CalculateNativeWinOcclusion --disable-background-timer-throttling \
@@ -738,6 +750,9 @@ fn create_environment(user_data: &Path) -> Result<ICoreWebView2Environment, Erro
     // The GPU it draws on (graphics.rs).
     if let Some(gpu) = GPU_ARGUMENT.lock().unwrap_or_else(|e| e.into_inner()).as_deref() {
         arguments = format!("{arguments} {gpu}");
+    }
+    if !extra.is_empty() {
+        arguments = format!("{arguments} {extra}");
     }
     // SAFETY: the options object is ours and alive; the arguments are a plain string.
     unsafe {

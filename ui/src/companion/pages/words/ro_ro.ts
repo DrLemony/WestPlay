@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Alege imagini de fundal',
     pickWallpaperFolder: 'Alege un dosar cu imagini de fundal',
     pickFolder: 'Alege dosarul unui set de pictograme',
+    tvTitle: 'TV',
+    tvFolder: 'Dosarul cu videoclipuri',
+    tvPick: 'Alege dosarul cu videoclipurile tale',
+    tvNote:
+      'Videoclipurile din acest dosar și din subdosarele lui (MP4, WebM, MOV) rulează în aplicația TV, într-un profil Videoclipuri de pe PC.',
     pickZip: 'Alege .zip-ul unui set de pictograme',
     images: 'Imagini',
     zips: 'Arhive zip',

@@ -43,6 +43,11 @@ export function addWallpapers(folder: boolean, title: string, kinds: string): Pr
   return call('add_wallpapers', { folder, title, kinds })
 }
 
+/** Asks for the folder the cab's TV plays PC videos from: its path, or `null`: cancelled. */
+export function pickTvVideos(title: string): Promise<string | null> {
+  return call('pick_tv_videos', { title })
+}
+
 /** Asks for an icon set, a folder or (`zip`) a .zip, and adds it; `null`: cancelled. */
 export function addIconSet(zip: boolean, title: string, kinds: string): Promise<Added | null> {
   return call('add_icon_set', { zip, title, kinds })
