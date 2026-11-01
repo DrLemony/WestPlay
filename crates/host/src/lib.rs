@@ -28,6 +28,7 @@ mod route_change;
 pub mod settings;
 mod signin;
 mod site_browser;
+mod tv_view;
 pub mod speakers;
 mod spotify;
 pub mod startup;
@@ -312,6 +313,8 @@ pub fn run(mut config: Config, stop: Arc<AtomicBool>) -> Result<(), Error> {
     let mut page_height = config.height;
     let mut pointer = Pointer::new(config.width, config.height);
     let mut site_browser: Option<site_browser::Browser> = None;
+    // TV's player (tv_view.rs), while TV uses it.
+    let mut tv: Option<tv_view::Tv> = None;
     // The screen's cursor, drawn into the frames the game takes (cursor.rs), and whether the page was last told the
     // host draws it (`None`: not told since it loaded).
     let mut cursor = cursor::Cursor::new(Instant::now());
@@ -759,6 +762,31 @@ pub fn run(mut config: Config, stop: Arc<AtomicBool>) -> Result<(), Error> {
                     if let Some(browser) = &mut site_browser {
                         if let Err(error) = browser.command(command, &stage) {
                             log!("[site browser] command failed: {error}");
+                        }
+                    }
+                }
+                Some(PageMessage::Tv { command }) => {
+                    if matches!(command, tv_view::Command::Close) {
+                        if let Some(closing) = tv.take() {
+                            let _ = stage.remove(&closing.view);
+                        }
+                        continue;
+                    }
+                    if tv.is_none() && !matches!(command, tv_view::Command::Hide) {
+                        match tv_page(&config.content)
+                            .map(|page| tv_view::Tv::new(&stage, &config.data_dir.join("tv-player"), &page))
+                        {
+                            Some(Ok(player)) => tv = Some(player),
+                            Some(Err(error)) => log!("[tv] could not start: {error}"),
+                            None => log!("[tv] no player page for this cabin page"),
+                        }
+                    }
+                    if let Some(player) = &mut tv {
+                        let videos = config.settings.get().tv.videos;
+                        match player.command(command, &stage, videos.as_deref()) {
+                            Ok(Some(answer)) => drop(webview.post_json(&answer)),
+                            Ok(None) => {}
+                            Err(error) => log!("[tv] command failed: {error}"),
                         }
                     }
                 }
@@ -1409,6 +1437,11 @@ pub fn run(mut config: Config, stop: Arc<AtomicBool>) -> Result<(), Error> {
         if let Some(browser) = &mut site_browser {
             browser.tick(&webview);
         }
+        if let Some(player) = &tv {
+            for message in player.take_messages() {
+                let _ = webview.post_json(&message);
+            }
+        }
 
         // What the player typed on their own keyboard, and whether it types (the plugin decides: the truck
         // standing still, a field selected then).
@@ -1996,6 +2029,20 @@ fn settings_message(settings: &settings::Settings) -> String {
     .to_string()
 }
 
+/// Where TV's player page is: beside the cabin page (its UI folder), or on the same dev server.
+fn tv_page(content: &Content) -> Option<tv_view::TvPage> {
+    match content {
+        Content::Folder { root, .. } => Some(tv_view::TvPage::Folder(root.clone())),
+        Content::Url(url) => {
+            let mut page = url::Url::parse(url).ok()?;
+            page.set_path("/tv-player.html");
+            page.set_query(None);
+            Some(tv_view::TvPage::Url(page.to_string()))
+        }
+        Content::Html(_) => None,
+    }
+}
+
 /// `{"type":"customize","wallpapers":[…],"iconSets":[…]}`: the player's own wallpapers and icon sets
 /// (`customize::Customizations`), their files at `https://westplay.customize/`.
 fn customize_list_message(customizations: &customize::Customizations) -> String {
@@ -2009,6 +2056,7 @@ fn customize_list_message(customizations: &customize::Customizations) -> String 
 #[serde(tag = "type", rename_all = "camelCase")]
 enum PageMessage {
     Browser { command: site_browser::Command },
+    Tv { command: tv_view::Command },
     /// Posted when the page (re)loads.
     Ready,
     /// A startup stage the page reached (the boot screens shown), for the startup log (`startup`).

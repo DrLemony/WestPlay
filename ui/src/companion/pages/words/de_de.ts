@@ -269,6 +269,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Hintergründe auswählen',
     pickWallpaperFolder: 'Ordner mit Hintergründen auswählen',
     pickFolder: 'Ordner eines Symbolsatzes auswählen',
+    tvTitle: 'TV',
+    tvFolder: 'Videoordner',
+    tvPick: 'Wähle den Ordner deiner Videos',
+    tvNote:
+      'Die Videos in diesem Ordner und seinen Unterordnern (MP4, WebM, MOV) laufen in der TV-App, in einem PC-Videos-Profil.',
     pickZip: '.zip eines Symbolsatzes auswählen',
     images: 'Bilder',
     zips: 'Zip-Archive',

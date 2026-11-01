@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Vyberte tapety',
     pickWallpaperFolder: 'Vyberte složku s tapetami',
     pickFolder: 'Vyberte složku sady ikon',
+    tvTitle: 'TV',
+    tvFolder: 'Složka s videi',
+    tvPick: 'Vyberte složku se svými videi',
+    tvNote:
+      'Videa v této složce a jejích podsložkách (MP4, WebM, MOV) se přehrávají v aplikaci TV, v profilu Videa z PC.',
     pickZip: 'Vyberte .zip sady ikon',
     images: 'Obrázky',
     zips: 'Archivy zip',

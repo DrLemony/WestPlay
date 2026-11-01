@@ -11,6 +11,7 @@ import { useKeyboard } from '../../keyboard/store'
 import { useCabin } from '../../state/store'
 import { useLanguage, useText } from '../../state/text'
 import { whenTransitionEnds } from '../../state/launch'
+import { nativeRect } from '../nativeRect'
 import './safari.css'
 
 type BrowserState = Extract<HostMessage, { type: 'browserState' }>
@@ -96,21 +97,8 @@ export function SafariApp() {
       }
       const place = () => {
         if (gone) return
-        const box = area.current?.getBoundingClientRect()
-        const cabin = document.querySelector('.carplay')?.getBoundingClientRect()
-        const keyboard = document.querySelector('.keyboard.shown')?.getBoundingClientRect()
-        if (box && cabin) {
-          const scale = window.devicePixelRatio
-          const left = Math.max(0, box.left, cabin.left)
-          const top = Math.max(0, box.top, cabin.top)
-          const right = Math.min(box.right, cabin.right, window.innerWidth)
-          const bottom = Math.min(box.bottom, cabin.bottom, window.innerHeight, keyboard?.top ?? Infinity)
-          const rect = {
-            x: Math.round(left * scale),
-            y: Math.round(top * scale),
-            width: Math.max(0, Math.floor((right - left) * scale)),
-            height: Math.max(0, Math.floor((bottom - top) * scale)),
-          }
+        const rect = nativeRect(area.current)
+        if (rect) {
           const next = JSON.stringify(rect)
           if (last !== next) {
             last = next

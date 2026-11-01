@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Wybierz tapety',
     pickWallpaperFolder: 'Wybierz folder z tapetami',
     pickFolder: 'Wybierz folder zestawu ikon',
+    tvTitle: 'TV',
+    tvFolder: 'Folder z filmami',
+    tvPick: 'Wybierz folder ze swoimi filmami',
+    tvNote:
+      'Filmy z tego folderu i jego podfolderów (MP4, WebM, MOV) odtwarzają się w aplikacji TV, w profilu Filmy z PC.',
     pickZip: 'Wybierz plik .zip zestawu ikon',
     images: 'Obrazy',
     zips: 'Archiwa zip',

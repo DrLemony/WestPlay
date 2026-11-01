@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Chọn hình nền',
     pickWallpaperFolder: 'Chọn thư mục hình nền',
     pickFolder: 'Chọn thư mục của bộ biểu tượng',
+    tvTitle: 'TV',
+    tvFolder: 'Thư mục video',
+    tvPick: 'Chọn thư mục video của bạn',
+    tvNote:
+      'Video trong thư mục này và các thư mục con (MP4, WebM, MOV) phát trong ứng dụng TV, ở hồ sơ Video trên PC.',
     pickZip: 'Chọn tệp .zip của bộ biểu tượng',
     images: 'Hình ảnh',
     zips: 'Tệp nén zip',

@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'აირჩიეთ ფონები',
     pickWallpaperFolder: 'აირჩიეთ ფონების საქაღალდე',
     pickFolder: 'აირჩიეთ ხატულების ნაკრების საქაღალდე',
+    tvTitle: 'TV',
+    tvFolder: 'ვიდეოების საქაღალდე',
+    tvPick: 'აირჩიეთ თქვენი ვიდეოების საქაღალდე',
+    tvNote:
+      'ამ საქაღალდისა და მისი ქვესაქაღალდეების ვიდეოები (MP4, WebM, MOV) TV აპში იკვრება, კომპიუტერის ვიდეოების პროფილში.',
     pickZip: 'აირჩიეთ ხატულების ნაკრების .zip',
     images: 'სურათები',
     zips: 'Zip არქივები',

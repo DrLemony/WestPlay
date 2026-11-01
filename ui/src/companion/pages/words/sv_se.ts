@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Välj bakgrunder',
     pickWallpaperFolder: 'Välj en mapp med bakgrunder',
     pickFolder: 'Välj mappen med en symboluppsättning',
+    tvTitle: 'TV',
+    tvFolder: 'Videomapp',
+    tvPick: 'Välj mappen med dina videor',
+    tvNote:
+      'Videorna i den här mappen och dess undermappar (MP4, WebM, MOV) spelas i TV-appen, i en profil för datorns videor.',
     pickZip: 'Välj .zip-filen med en symboluppsättning',
     images: 'Bilder',
     zips: 'Zip-arkiv',

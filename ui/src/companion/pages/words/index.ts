@@ -188,6 +188,11 @@ export interface CompanionWords {
     pickWallpapers: string
     pickWallpaperFolder: string
     pickFolder: string
+    /** The TV app's PC videos: their section, the row naming the folder, its picker's title, and what it does. */
+    tvTitle: string
+    tvFolder: string
+    tvPick: string
+    tvNote: string
     pickZip: string
     images: string
     zips: string

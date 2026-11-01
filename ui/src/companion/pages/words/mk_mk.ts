@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Изберете позадини',
     pickWallpaperFolder: 'Изберете папка со позадини',
     pickFolder: 'Изберете ја папката на сет икони',
+    tvTitle: 'ТВ',
+    tvFolder: 'Папка со видеа',
+    tvPick: 'Изберете ја папката со вашите видеа',
+    tvNote:
+      'Видеата во оваа папка и нејзините потпапки (MP4, WebM, MOV) се пуштаат во апликацијата ТВ, во профил Видеа од компјутерот.',
     pickZip: 'Изберете го .zip-от на сет икони',
     images: 'Слики',
     zips: 'Zip архиви',

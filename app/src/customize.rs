@@ -139,6 +139,14 @@ pub async fn remove_icon_set(
     })
 }
 
+/// Asks for the folder the cab's TV plays PC videos from (Windows' picker, titled `title`): its path, which the
+/// companion keeps in the settings (`tv.videos`). None: the player cancelled.
+#[tauri::command]
+pub async fn pick_tv_videos(window: WebviewWindow, title: String) -> Result<Option<String>, String> {
+    let owner = owner(&window);
+    blocking(move || Ok(pick::folder(owner, &title).map(|folder| folder.to_string_lossy().into_owned()))).await
+}
+
 /// Changes the look settings, if `change` does, and keeps and announces them as `update_settings` does.
 fn forget(
     store: &SettingsStore,

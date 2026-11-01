@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Valitse taustakuvat',
     pickWallpaperFolder: 'Valitse taustakuvien kansio',
     pickFolder: 'Valitse kuvakesarjan kansio',
+    tvTitle: 'TV',
+    tvFolder: 'Videokansio',
+    tvPick: 'Valitse videoidesi kansio',
+    tvNote:
+      'Tämän kansion ja sen alikansioiden videot (MP4, WebM, MOV) toistuvat TV-sovelluksessa, PC-videot-profiilissa.',
     pickZip: 'Valitse kuvakesarjan .zip',
     images: 'Kuvat',
     zips: 'Zip-arkistot',

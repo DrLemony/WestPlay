@@ -269,6 +269,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Háttérképek kiválasztása',
     pickWallpaperFolder: 'Háttérképmappa kiválasztása',
     pickFolder: 'Egy ikonkészlet mappájának kiválasztása',
+    tvTitle: 'TV',
+    tvFolder: 'Videómappa',
+    tvPick: 'Válaszd ki a videóid mappáját',
+    tvNote:
+      'A mappában és almappáiban lévő videók (MP4, WebM, MOV) a TV alkalmazásban, egy Gépen lévő videók profilban játszhatók le.',
     pickZip: 'Egy ikonkészlet .zip-jének kiválasztása',
     images: 'Képek',
     zips: 'Zip-archívumok',

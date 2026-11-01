@@ -268,6 +268,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Aukeratu horma-paperak',
     pickWallpaperFolder: 'Aukeratu horma-paperen karpeta',
     pickFolder: 'Aukeratu ikono-multzo baten karpeta',
+    tvTitle: 'TV',
+    tvFolder: 'Bideo karpeta',
+    tvPick: 'Aukeratu zure bideoen karpeta',
+    tvNote:
+      'Karpeta honetako eta bere azpikarpetetako bideoak (MP4, WebM, MOV) TV aplikazioan erreproduzitzen dira, PCko bideoak profil batean.',
     pickZip: 'Aukeratu ikono-multzo baten .zip-a',
     images: 'Irudiak',
     zips: 'Zip artxiboak',

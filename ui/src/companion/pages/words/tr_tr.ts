@@ -261,6 +261,11 @@ export const words: CompanionWords = {
     pickWallpapers: 'Duvar kâğıtlarını seç',
     pickWallpaperFolder: 'Duvar kâğıdı klasörü seç',
     pickFolder: 'Simge setinin klasörünü seç',
+    tvTitle: 'TV',
+    tvFolder: 'Video Klasörü',
+    tvPick: 'Videolarının klasörünü seç',
+    tvNote:
+      'Bu klasördeki ve içindeki klasörlerdeki videolar (MP4, WebM, MOV) TV uygulamasında, PC Videoları profilinde oynar.',
     pickZip: 'Simge setinin .zip dosyasını seç',
     images: 'Görseller',
     zips: 'Zip arşivleri',

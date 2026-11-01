@@ -30,6 +30,10 @@ export interface Settings {
   graphics: {
     gpu: string | null
   }
+  /** The cab's TV app: the folder its PC videos come from, or `null`: none chosen. */
+  tv: {
+    videos: string | null
+  }
 }
 
 /** Mirrors `westplay_host::settings::TruckStrip`: the truck's own strip beside WestPlay, kept or not. */

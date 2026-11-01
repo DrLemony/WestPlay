@@ -33,6 +33,16 @@ pub struct Settings {
     pub graphics: GraphicsSettings,
     #[serde(deserialize_with = "lenient")]
     pub sound: SoundSettings,
+    #[serde(deserialize_with = "lenient")]
+    pub tv: TvSettings,
+}
+
+/// The cab's TV app: the folder its PC videos come from (chosen in the companion's Customize), or none.
+#[derive(Clone, Debug, Default, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase", default)]
+pub struct TvSettings {
+    #[serde(deserialize_with = "lenient")]
+    pub videos: Option<String>,
 }
 
 /// The sound the players play: its tone (the cab's Settings › Equalizer), the same in every truck. As iOS's
@@ -451,6 +461,7 @@ mod tests {
                 equalizer: crate::speakers::Equalizer { bass: -3, mid: 1, treble: 2 },
                 custom: true,
             },
+            tv: TvSettings { videos: Some(r"D:\Videos\Trips".into()) },
         };
         let json = to_json(&settings);
         assert!(json.contains("\"version\": 2"), "{json}");
