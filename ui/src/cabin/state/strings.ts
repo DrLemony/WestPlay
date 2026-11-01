@@ -431,6 +431,45 @@ export interface Strings {
     /** No game, or one whose weather WestPlay can't read. */
     unavailable: string
   }
+  /** Safari: its toolbar and what it says. */
+  safari: {
+    back: string
+    forward: string
+    reload: string
+    stop: string
+    go: string
+    address: string
+    loading: string
+    zoomIn: string
+    zoomOut: string
+    restart: string
+    /** Outside WestPlay (the page in a desktop browser), where no website can show. */
+    outsideHost: string
+  }
+  /** TV: the player's M3U playlists, their channels and the channel playing. */
+  tv: {
+    playlists: string
+    addPlaylist: string
+    playlistHint: string
+    add: string
+    remove: string
+    /** The free list offered while there's none. */
+    suggested: string
+    nowPlaying: string
+    search: string
+    all: string
+    loading: string
+    noChannels: string
+    playlistFailed: string
+    streamFailed: string
+    /** A channel with no name of its own. */
+    live: string
+    play: string
+    pause: string
+    stop: string
+    volumeUp: string
+    volumeDown: string
+  }
   /** The Settings app: its pages, rows and the words under them. */
   settings: {
     appearance: string
@@ -911,6 +950,40 @@ export const STRINGS: Record<Language, Strings> = {
       roadTrends: { drying: 'Drying', gettingWet: 'Getting wetter' },
       unavailable: 'The weather shows while the game runs.',
     },
+    safari: {
+      back: 'Back',
+      forward: 'Forward',
+      reload: 'Reload',
+      stop: 'Stop',
+      go: 'Go',
+      address: 'Search or enter website name',
+      loading: 'Loading…',
+      zoomIn: 'Zoom In',
+      zoomOut: 'Zoom Out',
+      restart: 'Restart',
+      outsideHost: 'Websites open in the WestPlay app.',
+    },
+    tv: {
+      playlists: 'Playlists',
+      addPlaylist: 'Add playlist',
+      playlistHint: 'M3U or M3U8 link',
+      add: 'Add',
+      remove: 'Remove',
+      suggested: 'Free channels (iptv-org)',
+      nowPlaying: 'Now Playing',
+      search: 'Search channels',
+      all: 'All',
+      loading: 'Loading…',
+      noChannels: 'No channels',
+      playlistFailed: 'The playlist couldn’t be loaded.',
+      streamFailed: 'This channel couldn’t be played.',
+      live: 'Live',
+      play: 'Play',
+      pause: 'Pause',
+      stop: 'Stop',
+      volumeUp: 'Volume up',
+      volumeDown: 'Volume down',
+    },
     settings: {
       appearance: 'Appearance',
       light: 'Light',
@@ -943,6 +1016,8 @@ export const STRINGS: Record<Language, Strings> = {
       spotify: 'Spotify',
       youtube: 'YouTube',
       youtubeMusic: 'YouTube Music',
+      safari: 'Safari',
+      tv: 'TV',
       podcasts: 'Podcasts',
       phone: 'Phone',
       messages: 'Messages',
@@ -1397,6 +1472,40 @@ export const STRINGS: Record<Language, Strings> = {
       roadTrends: { drying: 'Kuruyor', gettingWet: 'Islanıyor' },
       unavailable: 'Hava durumu oyun açıkken görünür.',
     },
+    safari: {
+      back: 'Geri',
+      forward: 'İleri',
+      reload: 'Yenile',
+      stop: 'Durdur',
+      go: 'Git',
+      address: 'Ara veya web sitesi adı gir',
+      loading: 'Yükleniyor…',
+      zoomIn: 'Yakınlaştır',
+      zoomOut: 'Uzaklaştır',
+      restart: 'Yeniden başlat',
+      outsideHost: 'Web siteleri WestPlay uygulamasında açılır.',
+    },
+    tv: {
+      playlists: 'Listeler',
+      addPlaylist: 'Liste ekle',
+      playlistHint: 'M3U veya M3U8 linki',
+      add: 'Ekle',
+      remove: 'Sil',
+      suggested: 'Ücretsiz kanallar (iptv-org)',
+      nowPlaying: 'Şu an oynuyor',
+      search: 'Kanal ara',
+      all: 'Tümü',
+      loading: 'Yükleniyor…',
+      noChannels: 'Kanal yok',
+      playlistFailed: 'Liste yüklenemedi.',
+      streamFailed: 'Bu kanal oynatılamadı.',
+      live: 'Canlı',
+      play: 'Oynat',
+      pause: 'Duraklat',
+      stop: 'Durdur',
+      volumeUp: 'Sesi aç',
+      volumeDown: 'Sesi kıs',
+    },
     settings: {
       appearance: 'Görünüm',
       light: 'Açık',
@@ -1429,6 +1538,8 @@ export const STRINGS: Record<Language, Strings> = {
       spotify: 'Spotify',
       youtube: 'YouTube',
       youtubeMusic: 'YouTube Music',
+      safari: 'Safari',
+      tv: 'TV',
       podcasts: 'Podcast’ler',
       phone: 'Telefon',
       messages: 'Mesajlar',

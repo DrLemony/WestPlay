@@ -1,0 +1,89 @@
+/* Safari: the page above, and under it iOS Safari's bar: back, forward, the address pill, text size. */
+.safari-app {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.safari-page {
+  flex: 1;
+  min-height: 0;
+  background: white;
+  color: #333;
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.safari-error {
+  color: #c64336;
+  font-size: 16px;
+  padding: 0 8px;
+}
+.safari-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-size: 20px;
+}
+.safari-app button {
+  border: 0;
+  background: none;
+  color: #0a84ff;
+  font: inherit;
+  font-size: 30px;
+  min-width: 44px;
+  min-height: 44px;
+  cursor: pointer;
+}
+.safari-app button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.safari-app button:active {
+  opacity: 0.6;
+}
+.safari-address {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  border-radius: 14px;
+  padding: 0 4px 0 12px;
+  background: var(--app-background);
+  overflow: hidden;
+}
+.safari-address .text-field {
+  flex: 1;
+  min-width: 0;
+}
+.safari-address > button {
+  font-size: 24px;
+  color: var(--text);
+}
+/* Loading: the thin blue line along the pill's foot. */
+.safari-address.loading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 40%;
+  background: #0a84ff;
+  animation: safari-loading 1.2s ease-in-out infinite;
+}
+@keyframes safari-loading {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+.safari-zoom {
+  min-width: 52px;
+  text-align: center;
+  font-size: 16px;
+}

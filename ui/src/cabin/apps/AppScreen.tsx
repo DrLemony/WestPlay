@@ -12,6 +12,8 @@ import { YouTubeMusicApp } from './youtubeMusic/YouTubeMusicApp'
 import { WeatherApp } from './weather/WeatherApp'
 import { YouTubeApp } from './youtube/YouTubeApp'
 import './apps.css'
+import { SafariApp } from './safari/SafariApp'
+import { TvApp } from './tv/TvApp'
 
 /**
  * An open app: its window, which grows out of the icon that opened it and shrinks back into its Home icon
@@ -69,6 +71,10 @@ export function AppScreen({ app }: { app: AppId }) {
 function AppContent({ app }: { app: AppId }) {
   const text = useText()
   switch (app) {
+    case 'safari':
+      return <SafariApp />
+    case 'tv':
+      return <TvApp />
     case 'maps':
       return (
         <section className="app-panel maps-app" aria-label={text.apps.maps}>
