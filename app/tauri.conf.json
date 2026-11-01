@@ -20,7 +20,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "WestPlay",
+        "title": "WestPlay Community",
         "width": 900,
         "height": 600,
         "resizable": false,
@@ -52,7 +52,7 @@
   "plugins": {
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDU2OTc1ODBDNjdDNTc3Q0UKUldUT2Q4Vm5ERmlYVnQvV0dLdVVNUWtlcjlpKzB3MVVNeVJVeHhXNHFGVUNaU2xpVDNNVjhkWmEK",
-      "endpoints": ["https://github.com/enes-less/WestPlay/releases/latest/download/latest.json"],
+      "endpoints": ["https://github.com/DrLemony/WestPlay/releases/latest/download/latest.json"],
       "requireSignedVersion": true,
       "windows": {
         "installMode": "passive"

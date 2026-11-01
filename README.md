@@ -1,20 +1,22 @@
 <p align="center"><img src="ui/public/westplay.png" width="112" alt="WestPlay"></p>
 
-<h1 align="center">WestPlay</h1>
+<h1 align="center">WestPlay Community</h1>
 
 <p align="center">
   <b>A CarPlay-style screen for the trucks of Euro Truck Simulator 2.</b><br>
-  Your map, your music and YouTube, on your truck's own dashboard screen.
+  Your map, your music and YouTube, on your truck's own dashboard screen.<br>
+  A community version of <a href="https://github.com/enes-less/WestPlay">enes-less/WestPlay</a>, with a browser and live TV added.
 </p>
 
 <p align="center">
-  <a href="https://github.com/enes-less/WestPlay/releases/latest"><img alt="Download for Windows" src="https://img.shields.io/badge/download-for%20Windows-409c42?style=for-the-badge"></a>
+  <a href="https://github.com/DrLemony/WestPlay/releases/latest"><img alt="Download for Windows" src="https://img.shields.io/badge/download-for%20Windows-409c42?style=for-the-badge"></a>
   <img alt="Windows 10 and 11" src="https://img.shields.io/badge/Windows-10%20%7C%2011-2b2b2b?style=for-the-badge">
   <img alt="Euro Truck Simulator 2 1.61" src="https://img.shields.io/badge/ETS2-1.61-2b2b2b?style=for-the-badge">
   <a href="LICENSE"><img alt="Licence: GPL-3.0-or-later" src="https://img.shields.io/badge/licence-GPL--3.0-2b2b2b?style=for-the-badge"></a>
 </p>
 
 <p align="center">
+  <a href="#community">Community</a> ·
   <a href="#features">Features</a> ·
   <a href="#trucks">Trucks</a> ·
   <a href="#install">Install</a> ·
@@ -33,6 +35,28 @@
 WestPlay puts a phone-style car screen on your truck's own dashboard display, inside the game. Your route on a
 map made from your own game, your music, YouTube, the weather on your drive: right where a real truck has its
 screen, used with the mouse while you hold a key.
+
+## Community
+
+Everything WestPlay does, plus two apps on the truck's screen:
+
+- **Safari** — a web browser in the cab: an address bar, back, forward and reload, typed into with the cab's
+  keyboard or your own.
+- **TV** — live TV and your own videos. TV opens on its sources, Netflix-style: each one a card, and **+** adds
+  another.
+  - **M3U playlist** — a link to an M3U or M3U8 list of channels (or a single stream), with its groups and search.
+  - **Xtream** — your provider's server, username and password; its live channels by category.
+  - **PC videos** — the videos in a folder you choose in the companion (Customize → TV): mp4, m4v, webm and mov
+    (mkv where Windows plays it).
+
+  Each link field has a **Paste** button for what you copied on your PC. TV pauses with the game and stops when
+  you leave it.
+
+TV plays what you give it and comes with no channels of its own: use playlists and providers you have the right to
+watch. Protected streaming services (Netflix and the like) don't play in WestPlay.
+
+The Community version installs over WestPlay (same place, same settings). It takes its updates from this
+repository's releases, not the original's, so an update of the original never replaces it.
 
 ## Features
 
@@ -150,12 +174,12 @@ Music plays from the truck's own speakers, each where it sits in the cab. Other 
 
 ## Install
 
-1. Download the installer from the [latest release](https://github.com/enes-less/WestPlay/releases/latest) and run it.
+1. Download the installer from the [latest release](https://github.com/DrLemony/WestPlay/releases/latest) and run it.
 2. The companion opens and walks you through the rest: it finds your game, installs WestPlay's plugin and its
    screens mod, and builds your map.
 3. Start the game and get in a truck.
 
-WestPlay looks for updates on its own and asks before installing one.
+WestPlay looks for updates on its own (this repository's releases) and asks before installing one.
 
 **Requirements:** Windows 10 or 11 (64-bit), Euro Truck Simulator 2 version 1.61 (other versions may work; the
 companion says when one is untested), and Microsoft Edge WebView2 (part of Windows 11; the installer adds it
